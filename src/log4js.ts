@@ -1,4 +1,4 @@
-import 'js-node-assist'
+import '@pefish/js-node-assist'
 import * as log4js from 'log4js'
 import BaseLogger from './base_logger'
 

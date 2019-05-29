@@ -5,7 +5,7 @@ export default class BaseLogger {
     let targetLine = null
     const a = {}
     Error.captureStackTrace(a)
-    for (const line of a[`stack`].split(`\n`).removeFirstOne()) {
+    for (const line of a[`stack`].split(`\n`).removeFirstOne_()) {
       if (!line.includes(`node/helpers/logger/gcloud_logging.js`) && !line.includes(`node/helpers/logger/base_logger.js`)) {
         targetLine = line
         break
