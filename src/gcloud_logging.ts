@@ -1,6 +1,7 @@
-import 'js-node-assist'
+import '@pefish/js-node-assist'
 import BaseLogger from './base_logger'
 import * as moment from 'moment'
+import * as util from 'util'
 
 export default class GcloudLogging extends BaseLogger {
   _name: string
@@ -10,53 +11,38 @@ export default class GcloudLogging extends BaseLogger {
     this._name = name
   }
 
-  debug (msg) {
+  debug (...msg) {
     global[`debug`] === true && console.log(JSON.stringify({
-      message: msg,
+      message: util.inspect(msg),
       project: this._name,
       severity: `debug`,
       time: moment.utc(new Date()).toISOString(true),
     }))
   }
 
-  info (msg) {
+  info (...msg) {
     console.log(JSON.stringify({
-      message: msg,
+      message: util.inspect(msg),
       project: this._name,
       severity: `info`,
       time: moment.utc(new Date()).toISOString(true),
     }))
   }
 
-  warn (msg) {
-    if (msg instanceof Error) {
-      msg = {
-        name: msg.name,
-        message: msg.message,
-        stack: msg.stack,
-      }
-    }
+  warn (...msg) {
     console.log(JSON.stringify({
       ...this.getInfoFromStack(),
-      message: msg,
+      message: util.inspect(msg),
       project: this._name,
       severity: `warn`,
       time: moment.utc(new Date()).toISOString(true),
     }))
   }
 
-  error (msg) {
-    if (msg instanceof Error) {
-      msg = {
-        name: msg.name,
-        message: msg.message,
-        stack: msg.stack,
-      }
-    }
-
+  error (...msg) {
     console.log(JSON.stringify({
       ...this.getInfoFromStack(),
-      message: msg,
+      message: util.inspect(msg),
       project: this._name,
       severity: `error`,
       time: moment.utc(new Date()).toISOString(true),
