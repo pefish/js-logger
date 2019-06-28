@@ -5,14 +5,16 @@ import * as util from 'util'
 
 export default class GcloudLogging extends BaseLogger {
   _name: string
+  level: string
 
-  constructor (name) {
+  constructor (name: string, level: string = null) {
     super()
     this._name = name
+    this.level = level || (global[`debug`] === true ? `debug` : `info`)
   }
 
   debug (...msg) {
-    global[`debug`] === true && console.log(JSON.stringify({
+    [`debug`].includes(this.level) && console.log(JSON.stringify({
       message: util.inspect(msg),
       project: this._name,
       severity: `debug`,
@@ -21,7 +23,7 @@ export default class GcloudLogging extends BaseLogger {
   }
 
   info (...msg) {
-    console.log(JSON.stringify({
+    [`debug`, `info`].includes(this.level) && console.log(JSON.stringify({
       message: util.inspect(msg),
       project: this._name,
       severity: `info`,
@@ -30,7 +32,7 @@ export default class GcloudLogging extends BaseLogger {
   }
 
   warn (...msg) {
-    console.log(JSON.stringify({
+    [`debug`, `info`, `warn`].includes(this.level) && console.log(JSON.stringify({
       ...this.getInfoFromStack(),
       message: util.inspect(msg),
       project: this._name,
@@ -40,7 +42,7 @@ export default class GcloudLogging extends BaseLogger {
   }
 
   error (...msg) {
-    console.log(JSON.stringify({
+    [`debug`, `info`, `warn`, `error`].includes(this.level) && console.log(JSON.stringify({
       ...this.getInfoFromStack(),
       message: util.inspect(msg),
       project: this._name,
