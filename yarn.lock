@@ -18,28 +18,26 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@pefish/js-error@^0.0.4":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@pefish/js-error/-/js-error-0.0.5.tgz#be50104cb7e6cb115a31ccdc55dafcf09a65a4ec"
-  integrity sha512-Eypll4OykI0EWj61wx8/cVMVldGjiPJVic/KzK76z1RZiNN9Q2TF7DJif+qg7MBlGbJHAQZ77wIBv5x9fndxpw==
+"@pefish/js-error@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@pefish/js-error/-/js-error-0.1.1.tgz#d3e6f4a1362206aaf73afd628465364c3a581ed2"
+  integrity sha512-JNLY0twr0fVEnGgrMetZsBZrStDGmHDX0dY9amDChTzVqrGEd6dvpzkR9BxINGhWgeAX6naTzI2FZn3ZwGlrsw==
 
-"@pefish/js-node-assist@^0.5.8":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@pefish/js-node-assist/-/js-node-assist-0.6.0.tgz#3c9b377c91c1fb91ef5bf1e6023b6cfd2eb4785f"
-  integrity sha512-IczCkklwLQaUz0H+m7r4D/ITe3BV50yZ2IkLC6cXfzHw/yybqmSpMyI44FaywVxMufyhRmFnWSfryd84+ratkw==
+"@pefish/js-node-assist@^0.6.6":
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/@pefish/js-node-assist/-/js-node-assist-0.6.6.tgz#62673762c0dcc8ce3faf20c8bb777008fb69a084"
+  integrity sha512-IvdZCVDZXi2oc25XlKEHC7bCMaTNyDmYN+wPpcRQOEpa1A4JEsscIVWbw33zNMeKWuOfVWdFdJopgxwchRHx3A==
   dependencies:
+    "@pefish/js-error" "^0.1.1"
     bignumber.js "^8.1.1"
-    p-js-assert "^0.0.1"
-    p-js-error "^0.0.4"
 
-"@pefish/js-util-time@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@pefish/js-util-time/-/js-util-time-0.0.1.tgz#534467102224e972a2ef4feba65e8d2f63edba9a"
-  integrity sha512-LLxG2RQmRSyCWhggJcuDiNEAOu3bgkNfdjmT/4LAW8pwVE26JcbBqqHKxKHLgXoGHIoR5WP5N5M2IDQ1tFpKlg==
+"@pefish/js-util-time@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@pefish/js-util-time/-/js-util-time-0.0.2.tgz#d1d57bc9f6e2187e6c02d1b311a5b7ff3465d154"
+  integrity sha512-a0dh6ewbKqf1l8QFMRrKux/3a4jV8zvkqUoCC+1H4UDx2if6iQ8IwjOdlLRwLp8m4QS9wjCnEkpZBccf38RDSg==
   dependencies:
-    js-node-assist "^0.5.8"
+    "@pefish/js-node-assist" "^0.6.6"
     moment "^2.24.0"
-    p-js-error "^0.0.4"
 
 "@types/chai@^4.1.7":
   version "4.1.7"
@@ -810,15 +808,6 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
-js-node-assist@^0.5.8:
-  version "0.5.8"
-  resolved "https://registry.yarnpkg.com/js-node-assist/-/js-node-assist-0.5.8.tgz#02f8a5d9d541eb4f4cc3edfc783af65e219a393d"
-  integrity sha512-zzaMQ8r3XnVFY8KvKgdXaHhRqm1rDJizdlE04Zktay58ObmiNNmUqCBSPSlABlQTiyza5wpSNIFHQLQqHrwl0g==
-  dependencies:
-    bignumber.js "^8.1.1"
-    p-js-assert "^0.0.1"
-    p-js-error "^0.0.4"
-
 js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -1104,19 +1093,6 @@ optionator@^0.8.1:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
     wordwrap "~1.0.0"
-
-p-js-assert@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/p-js-assert/-/p-js-assert-0.0.1.tgz#20e263b6b4e6dec5edef8e2bc384749e11449c69"
-  integrity sha512-vnXZYvwcgPF9fVB9F2rA/a9iEpPZe5QpIJjqYljujBEOosS9R4GVaaXFRw6CKyYa/a7DJMGmDTMjsfh+IQW+bA==
-  dependencies:
-    bignumber.js "^8.1.1"
-    p-js-error "^0.0.4"
-
-p-js-error@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/p-js-error/-/p-js-error-0.0.4.tgz#ae7dbba4f998576012bb818227961b7961cc9902"
-  integrity sha512-voF6p/u1QP+7UMMqZLucmnXHN5JncAvyeKjlvGVRQ9HuFhIL/RBxZ0gN0g1UXaRNdsOorWNfnNHuTGKNMN7toA==
 
 pac-proxy-agent@^3.0.0:
   version "3.0.0"
