@@ -1,4 +1,3 @@
-import '@pefish/js-node-assist'
 import BaseLogger from './base_logger'
 import * as moment from 'moment'
 import * as util from 'util'
