@@ -4,7 +4,7 @@ import BaseLogger from './base_logger'
 export default class Log4js extends BaseLogger {
   _logger: any
 
-  constructor (name: string, logfilePath: string = null, level: string = null) {
+  constructor (name: string = `default`, logfilePath: string = null, level: string = null) {
     super()
     level = level || (global[`debug`] === true ? `debug` : `info`)
     const category = name

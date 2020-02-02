@@ -6,7 +6,7 @@ export default class GcloudLogging extends BaseLogger {
   _name: string
   level: string
 
-  constructor (name: string, level: string = null) {
+  constructor (name: string = `default`, level: string = null) {
     super()
     this._name = name
     this.level = level || (global[`debug`] === true ? `debug` : `info`)
