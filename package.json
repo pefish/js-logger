@@ -1,10 +1,11 @@
 {
   "name": "@pefish/js-helper-logger",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "types": "./types/index.d.ts",
   "main": "./lib/index.js",
   "scripts": {
     "test": "mocha --require ts-node/register src/*.test.ts",
+    "t": "mocha --require ts-node/register",
     "build": "rm -rf types lib && tsc",
     "prepublish": "yarn build"
   },
@@ -13,6 +14,7 @@
     "moment": "^2.24.0"
   },
   "devDependencies": {
+    "@pefish/js-error": "^0.1.2",
     "@pefish/js-util-time": "^0.0.2",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
