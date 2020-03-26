@@ -16,7 +16,7 @@ describe('log4js', () => {
     try {
       helper.info(`1111`, `2222`)
       helper.error(`221`)
-      helper.error(util.inspect(new ErrorHelper(`123`)))
+      helper.error(new ErrorHelper(`123`))
       await TimeUtil.sleep(4000)
     } catch (err) {
       global.logger.error(err)

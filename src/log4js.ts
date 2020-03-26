@@ -1,6 +1,6 @@
 import * as log4js from 'log4js'
 import BaseLogger from './base_logger'
-
+import util from 'util'
 export default class Log4js extends BaseLogger {
   _logger: any
 
@@ -47,18 +47,18 @@ export default class Log4js extends BaseLogger {
   }
 
   debug (...msg) {
-    this._logger.debug(...msg)
+    this._logger.debug(util.inspect(msg, false, 10))
   }
 
   info (...msg) {
-    this._logger.info(...msg)
+    this._logger.info(util.inspect(msg, false, 10))
   }
 
   warn (...msg) {
-    this._logger.warn(...msg)
+    this._logger.warn(util.inspect(msg, false, 10))
   }
 
   error (...msg) {
-    this._logger.error(...msg)
+    this._logger.error(util.inspect(msg, false, 10))
   }
 }
