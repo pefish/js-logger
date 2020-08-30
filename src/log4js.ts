@@ -2,7 +2,7 @@ import * as log4js from 'log4js'
 import BaseLogger from './base_logger'
 import util from 'util'
 export default class Log4js extends BaseLogger {
-  _logger: any
+  _logger: log4js.Logger
 
   constructor (name: string = `default`, logfilePath: string = null, level: string = null) {
     super()

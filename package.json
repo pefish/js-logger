@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@pefish/js-error": "^0.1.2",
-    "@pefish/js-util-time": "^0.0.2",
+    "@pefish/js-util-time": "^0.1.1",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.13.7",
