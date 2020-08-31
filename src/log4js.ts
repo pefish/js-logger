@@ -47,18 +47,18 @@ export default class Log4js extends BaseLogger {
   }
 
   debug (...msg) {
-    this._logger.debug(util.inspect(msg, false, 10))
+    this._logger.debug(msg.map((m) => util.inspect(m, false, 10)).join(" "))
   }
 
   info (...msg) {
-    this._logger.info(util.inspect(msg, false, 10))
+    this._logger.info(msg.map((m) => util.inspect(m, false, 10)).join(" "))
   }
 
   warn (...msg) {
-    this._logger.warn(util.inspect(msg, false, 10))
+    this._logger.warn(msg.map((m) => util.inspect(m, false, 10)).join(" "))
   }
 
   error (...msg) {
-    this._logger.error(util.inspect(msg, false, 10))
+    this._logger.error(msg.map((m) => util.inspect(m, false, 10)).join(" "))
   }
 }
