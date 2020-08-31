@@ -4,7 +4,7 @@ import util from 'util'
 export default class Log4js extends BaseLogger {
   _logger: log4js.Logger
 
-  constructor (name: string = `default`, logfilePath: string = null, level: string = null) {
+  constructor (name: string = `default`, level: string = null) {
     super()
     level = level || (global[`debug`] === true ? `debug` : `info`)
     const category = name
@@ -18,24 +18,6 @@ export default class Log4js extends BaseLogger {
         appenders: ['console'],
         level,
       },
-    }
-    logfilePath = logfilePath || process.env[`NODE_LOG`]
-    if (logfilePath) {
-      const appenderName = `${category}_log`
-      // 文件输出
-      if (logfilePath.substr(logfilePath.length - 1, 1) !== '/') {
-        logfilePath += '/'
-      }
-      appenders[appenderName] = {
-        type: 'dateFile',
-        filename: logfilePath + category + '.log',
-        pattern: 'yyyy-MM-dd',
-        compress: true
-      }
-      categories[category] = {
-        appenders: [appenderName, 'console'],
-        level,
-      }
     }
     const config = {
       appenders,
