@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "log4js": "^2.3.12",
-    "moment": "^2.24.0"
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@pefish/js-error": "^0.1.2",
