@@ -10,11 +10,11 @@ export interface ILogger {
 }
 
 export class Logger implements ILogger {
-  private level: string = "info";
+  private level: string;
   private log4js: log4js.Logger;
 
   constructor() {
-    this.level = process.env["LOG_LEVEL"];
+    this.level = process.env["LOG_LEVEL"] || "info";
     log4js.configure({
       appenders: { console: { type: "console" } },
       categories: { default: { appenders: ["console"], level: this.level } },
