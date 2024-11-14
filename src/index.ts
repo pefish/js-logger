@@ -10,7 +10,7 @@ export interface ILogger {
 }
 
 export class Logger implements ILogger {
-  private level: string;
+  private level: string = "info";
   private log4js: log4js.Logger;
 
   constructor() {
