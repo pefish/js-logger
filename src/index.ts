@@ -3,10 +3,10 @@ import * as log4js from "log4js";
 export interface ILogger {
   getLevel(): string;
 
-  debug(data: any): void;
-  info(data: any): void;
-  warn(data: any): void;
-  error(data: any): void;
+  debug(message: any, ...args: any[]): void;
+  info(message: any, ...args: any[]): void;
+  warn(message: any, ...args: any[]): void;
+  error(message: any, ...args: any[]): void;
 }
 
 export class Logger implements ILogger {
@@ -26,16 +26,16 @@ export class Logger implements ILogger {
     return this.level;
   }
 
-  debug(data: any): void {
-    this.log4js.debug(data);
+  debug(message: any, ...args: any[]): void {
+    this.log4js.debug(message, ...args);
   }
-  info(data: any): void {
-    this.log4js.info(data);
+  info(message: any, ...args: any[]): void {
+    this.log4js.info(message, ...args);
   }
-  warn(data: any): void {
-    this.log4js.warn(data);
+  warn(message: any, ...args: any[]): void {
+    this.log4js.warn(message, ...args);
   }
-  error(data: any): void {
-    this.log4js.error(data);
+  error(message: any, ...args: any[]): void {
+    this.log4js.error(message, ...args);
   }
 }

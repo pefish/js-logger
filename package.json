@@ -1,6 +1,6 @@
 {
   "name": "@pefish/js-logger",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "types": "./types/index.d.ts",
   "main": "./lib/index.js",
   "scripts": {
