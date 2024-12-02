@@ -2,6 +2,7 @@ import * as log4js from "log4js";
 
 export interface ILogger {
   getLevel(): string;
+  getName(): string;
 
   debug(message: any, ...args: any[]): void;
   info(message: any, ...args: any[]): void;
@@ -10,11 +11,16 @@ export interface ILogger {
 }
 
 export class Logger implements ILogger {
+  private name: string;
   private level: string;
   private log4js: log4js.Logger;
 
-  constructor() {
-    this.level = process.env["LOG_LEVEL"] || "info";
+  constructor(
+    name: string = "",
+    level: string = process.env["LOG_LEVEL"] || "info"
+  ) {
+    this.name = name;
+    this.level = level;
     log4js.configure({
       appenders: { console: { type: "console" } },
       categories: { default: { appenders: ["console"], level: this.level } },
@@ -26,16 +32,32 @@ export class Logger implements ILogger {
     return this.level;
   }
 
+  getName(): string {
+    return this.name;
+  }
+
   debug(message: any, ...args: any[]): void {
-    this.log4js.debug(message, ...args);
+    this.log4js.debug(
+      this.name ? `[${this.name}]: ${message}` : message,
+      ...args
+    );
   }
   info(message: any, ...args: any[]): void {
-    this.log4js.info(message, ...args);
+    this.log4js.info(
+      this.name ? `[${this.name}]: ${message}` : message,
+      ...args
+    );
   }
   warn(message: any, ...args: any[]): void {
-    this.log4js.warn(message, ...args);
+    this.log4js.warn(
+      this.name ? `[${this.name}]: ${message}` : message,
+      ...args
+    );
   }
   error(message: any, ...args: any[]): void {
-    this.log4js.error(message, ...args);
+    this.log4js.error(
+      this.name ? `[${this.name}]: ${message}` : message,
+      ...args
+    );
   }
 }
