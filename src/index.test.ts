@@ -7,6 +7,6 @@ describe("", () => {
     }
     const a: Test = { a: "a" };
     const t = getType(a);
-    console.log(t);
+    console.log(t === "String");
   });
 });

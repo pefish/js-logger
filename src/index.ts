@@ -83,8 +83,7 @@ export type DataType =
   | "WeakMap"
   | "WeakSet"
   | "ArrayBuffer"
-  | "DataView"
-  | string;
+  | "DataView";
 
 export function getType(value: any): DataType {
   return Object.prototype.toString.call(value).slice(8, -1);
