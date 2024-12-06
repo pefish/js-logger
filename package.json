@@ -1,6 +1,6 @@
 {
   "name": "@pefish/js-logger",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "types": "./types/index.d.ts",
   "main": "./lib/index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "@types/chai": "^5.0.1",
     "@types/mocha": "^10.0.9",
     "@types/node": "^22.9.0",
+    "mocha": "^11.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   }

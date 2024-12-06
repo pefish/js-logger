@@ -61,3 +61,31 @@ export class Logger implements ILogger {
     );
   }
 }
+
+export type DataType =
+  // 基本类型
+  | "Undefined"
+  | "Null"
+  | "Boolean"
+  | "String"
+  | "Number"
+  | "BigInt"
+  | "Symbol"
+  // 内置对象
+  | "Object"
+  | "Array"
+  | "Function"
+  | "Date"
+  | "RegExp"
+  | "Error"
+  | "Map"
+  | "Set"
+  | "WeakMap"
+  | "WeakSet"
+  | "ArrayBuffer"
+  | "DataView"
+  | string;
+
+export function getType(value: any): DataType {
+  return Object.prototype.toString.call(value).slice(8, -1);
+}
